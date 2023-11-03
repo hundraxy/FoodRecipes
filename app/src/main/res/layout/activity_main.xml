@@ -36,7 +36,7 @@
     </androidx.appcompat.widget.Toolbar>
     <androidx.cardview.widget.CardView
         app:cardElevation="8dp"
-        app:cardBackgroundColor="@color/blue"
+        app:cardBackgroundColor="#FFFFFF"
         android:layout_margin="8dp"
         app:cardCornerRadius="8dp"
         android:layout_width="match_parent"

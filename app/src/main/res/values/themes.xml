@@ -3,8 +3,8 @@
     <style name="Base.Theme.FoodRecipes" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:editTextColor">@color/white</item>
-        <item name="android:textColorHint">@color/white</item>
+        <item name="android:editTextColor">@color/blue</item>
+        <item name="android:textColorHint">@color/blue</item>
     </style>
 
     <style name="Theme.FoodRecipes" parent="Base.Theme.FoodRecipes" />

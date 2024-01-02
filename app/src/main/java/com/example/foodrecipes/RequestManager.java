@@ -3,10 +3,14 @@ package com.example.foodrecipes;
 import android.content.Context;
 
 
+import com.example.foodrecipes.Listeners.InstructionsListener;
 import com.example.foodrecipes.Listeners.RandomRecipeResponseListener;
 import com.example.foodrecipes.Listeners.RecipeDetailsListener;
+import com.example.foodrecipes.Listeners.SimilarRecipesListener;
+import com.example.foodrecipes.Models.InstructionsResponse;
 import com.example.foodrecipes.Models.RandomRecipeApiResponse;
 import com.example.foodrecipes.Models.RecipeDetailsResponse;
+import com.example.foodrecipes.Models.SimilarRecipeResponse;
 
 import java.util.List;
 
@@ -70,6 +74,43 @@ public class RequestManager {
         });
     }
 
+    public void getSimilarRecipes(SimilarRecipesListener listener, int id ){
+        CallSimilarRecipes callSimilarRecipes = retrofit.create(CallSimilarRecipes.class);
+        Call<List<SimilarRecipeResponse>> call = callSimilarRecipes.callSimilarRecipe(id,"4",context.getString(R.string.api_key));
+        call.enqueue(new Callback<List<SimilarRecipeResponse>>() {
+            @Override
+            public void onResponse(Call<List<SimilarRecipeResponse>> call, Response<List<SimilarRecipeResponse>> response) {
+                if(!response.isSuccessful()){
+                    listener.didError(response.message());
+                }
+                listener.didFetch(response.body(),response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<SimilarRecipeResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+            }
+        });
+    }
+    public  void getInstructions(InstructionsListener listener, int id){
+        CallInstructions callInstructions = retrofit.create(CallInstructions.class);
+        Call<List<InstructionsResponse>> call = callInstructions.callInstructions(id, context.getString(R.string.api_key));
+        call.enqueue(new Callback<List<InstructionsResponse>>() {
+            @Override
+            public void onResponse(Call<List<InstructionsResponse>> call, Response<List<InstructionsResponse>> response) {
+                if (!response.isSuccessful()){
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(),response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<InstructionsResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+            }
+        });
+    }
     private interface CallRandomRecipes {
         @GET("recipes/random")
         Call<RandomRecipeApiResponse> callRandomRecipe(
@@ -86,6 +127,22 @@ public class RequestManager {
                 @Query("apiKey") String apiKey
         );
     }
+    private interface CallSimilarRecipes{
+        @GET("recipes/{id}/similar")
+        Call<List<SimilarRecipeResponse>> callSimilarRecipe(
+                @Path("id") int id,
+                @Query("number") String number,
+                @Query("apiKey") String apikey
 
+        );
+    }
+    private  interface  CallInstructions{
+        @GET("recipes/{id}/analyzedInstructions")
+        Call<List<InstructionsResponse>> callInstructions(
+                @Path("id") int id,
+                @Query("apiKey") String apikey
+        );
+
+    }
 }
 

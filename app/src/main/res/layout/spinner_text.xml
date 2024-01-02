@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp"
     android:text="Menu"
-    android:textStyle="bold"
     android:textSize="18sp"
-    android:textColor="@color/orange">
+    android:textColor="@color/black">
 
 </CheckedTextView>

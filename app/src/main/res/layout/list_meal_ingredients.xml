@@ -27,8 +27,8 @@
         <ImageView
             android:id="@+id/imageView_ingredients"
             android:scaleType="center"
-            android:layout_width="80dp"
-            android:layout_height="50dp"/>
+            android:layout_width="100dp"
+            android:layout_height="90dp"/>
         <TextView
             android:id="@+id/textView_ingredients_name"
             android:text="Chicken"

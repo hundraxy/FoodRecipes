@@ -3,6 +3,8 @@
   <component name="deploymentTargetDropDown">
     <value>
       <entry key="app">
+<<<<<<< HEAD
+<<<<<<< HEAD
         <State>
           <targetSelectedWithDropDown>
             <Target>
@@ -18,6 +20,12 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-01-03T18:02:14.637278100Z" />
         </State>
+=======
+        <State />
+>>>>>>> 7794a7a (add grandle nad update it)
+=======
+        <State />
+>>>>>>> 7794a7a (add grandle nad update it)
       </entry>
     </value>
   </component>

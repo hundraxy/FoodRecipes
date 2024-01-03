@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#F178C8"
+    app:cardBackgroundColor="#F39102"
     app:cardElevation="8dp"
     android:id="@+id/random_list_container"
     app:cardCornerRadius="14dp"
@@ -25,22 +25,24 @@
             android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-         <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            android:layout_margin="8dp">
 
-                <ImageView
+            <ImageView
                 android:id="@+id/imageView_food"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp"/>
 
-         </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-         <LinearLayout
+        <LinearLayout
             android:layout_gravity="center"
             android:background="@drawable/shapefill"
             android:layout_width="350dp"

@@ -15,7 +15,7 @@
             android:id="@+id/imageView_instructions_steps_items"
             android:scaleType="center"
             android:layout_width="100dp"
-            android:layout_height="60dp"/>
+            android:layout_height="100dp"/>
         <TextView
             android:id="@+id/textView_instructions_steps_items"
             android:text="Item"
